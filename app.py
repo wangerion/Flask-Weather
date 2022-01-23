@@ -14,6 +14,6 @@ def home():
     if request.method == 'POST':
         city = request.form.get("city")
         print(cityfinder(city))
-        return redirect("/")
+        return render_template("showcase.html", city=cityfinder(city))
     else:
         return render_template("index.html")
