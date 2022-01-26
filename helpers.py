@@ -21,6 +21,7 @@ class finder:
 
 def cityfinder(cityname):
     """Finds the city the user is looking for."""
+    """
     try:
         api1 = finder('apikey.json','API_Key' )
         apikey = api1.load()
@@ -29,14 +30,15 @@ def cityfinder(cityname):
         response.raise_for_status()
     except requests.RequestException:
         return None
-    
+    """
     try:
-        data = response.json()
+        #data = response.json()
         return {
-            "temp": data['current']['temperature'],
-            "feeltemp": data['current']['feelslike'],
-            "wind": data['current']['wind_speed'],
-            "description": data['current']['weather_descriptions'][0]
+            "temp": 7, #data['current']['temperature'],
+            "feeltemp": -4, #data['current']['feelslike'],
+            "wind": 30, #data['current']['wind_speed'],
+            "icons": "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0027_light_snow_showers_night.png", #data['current']['weather_icons'],
+            "description": 'Cloudy' #data['current']['weather_descriptions'][0]
         }
     except (KeyError, TypeError, ValueError):
         return None

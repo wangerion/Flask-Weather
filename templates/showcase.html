@@ -1,12 +1,26 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <div>
-        {{city.temp}}
-        Feels like {{city.feeltemp}}
-        Wind speed {{city.wind}}
-        {{city.description}}
-    </div>
-
-
+        <div class="row gy-5 align-items-center">
+            <div class="col"></div>
+            <div class="col">
+                <div class="temptext">
+                    <img src="{{city.icons}}" class="img-fluid rounded-3" alt="Small icon resembling the weather outside."> {{city.temp}}&#8451
+                </div>
+            </div>
+            <div class="col">{{city.description}}
+            <div class="col">Feels like {{city.feeltemp}}</div>
+        </div>
+        <div class="row gy-5 align-items-center">
+            <div class="col"></div>
+            <div class="col">{{city.description}}
+            <div class="col">Feels like {{city.feeltemp}}</div>
+            <div class="col"></div>
+            <div class="w-100 d-none d-md-block"></div>
+            <div class="col">Wind speed {{city.wind}}</div>
+            <div class="col">Feels like {{city.feeltemp}}</div>
+            <div class="col">{{city.description}}</div>
+            <div class="col">Wind speed {{city.wind}}</div>
+            <div class="col">Wind speed {{city.wind}}</div>
+        </div>
 {% endblock %}
