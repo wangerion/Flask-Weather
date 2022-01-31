@@ -4,13 +4,12 @@ import json
 
 class finder:
     """
-    Accessing api key from JSON file.
-    The syntax is finder('path to the api key', 'The Key value in the JSON file')     
+    Accessing api key from JSON file.     
     """
     def __init__(self, path, apiname):
         self.path = path
         self.apiname = apiname
-    """Loading apikey using the path specified and the key where the value we want is."""
+    #Loading apikey using the path specified and the key where the value we want is.
     def load(self):
         f = open(self.path)
         findkey = json.load(f)

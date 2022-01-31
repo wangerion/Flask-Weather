@@ -1,26 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
-        <div class="row gy-5 align-items-center">
-            <div class="col"></div>
-            <div class="col">
-                <div class="temptext">
-                    <img src="{{city.icons}}" class="img-fluid rounded-3" alt="Small icon resembling the weather outside."> {{city.temp}}&#8451
-                </div>
+    <div class="container-md mt-3">
+        <div class="row border border-black rounded">
+            <div>"Iasi, Romania" at "2022-01-24 00:34"</div>
+            <div class="col-8">
+                <span class="temptext">{{city.temp}}&#8451</span>
             </div>
-            <div class="col">{{city.description}}
-            <div class="col">Feels like {{city.feeltemp}}</div>
+            <div class="col-4">
+                <img src="{{city.icons}}" class="img-fluid rounded" alt="Small icon resembling the weather outside.">
+            </div>
         </div>
-        <div class="row gy-5 align-items-center">
-            <div class="col"></div>
-            <div class="col">{{city.description}}
-            <div class="col">Feels like {{city.feeltemp}}</div>
-            <div class="col"></div>
-            <div class="w-100 d-none d-md-block"></div>
-            <div class="col">Wind speed {{city.wind}}</div>
-            <div class="col">Feels like {{city.feeltemp}}</div>
+        <div class="row mt-2">
             <div class="col">{{city.description}}</div>
-            <div class="col">Wind speed {{city.wind}}</div>
-            <div class="col">Wind speed {{city.wind}}</div>
+            <div class="col"><i class="bi bi-thermometer"></i> Feels like {{city.feeltemp}}</div>
+            <div class="col"><i class="bi bi-wind"></i> Wind speed {{city.wind}}</div>
+            <div class="col">Feels like {{city.feeltemp}}</div>
         </div>
+    </div>
 {% endblock %}
