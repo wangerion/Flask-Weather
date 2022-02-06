@@ -1,11 +1,29 @@
 .temptext {
     font-weight: bold;
-    font-size: 50px;
-
+    font-size: 100px;
 }
 
-.feeltext {
-    font-size: 12px;
-    font-weight:100;
-    color: wheat;
+.weathercardbody {
+    max-width: 600px;
+    min-height: 200px;
+    border: 1px solid black;
+    background-image: url("/static/forest-g158be54cd_640.jpg");
+    color: white;
+}
+
+.additionalcard {
+    max-width: 400px;
+    min-height: 100px;
+    border: 1px solid black;
+}
+
+.weathercardheader {
+    background-color: rgba(154, 154, 177, 0.5);
+    color: white;
+    border-top-left-radius: 2.75px;
+    border-top-right-radius: 2.75px;
+}
+
+body{
+    background-image: url(/static/[GIF]\ Weather.gif);
 }

@@ -20,24 +20,22 @@ class finder:
 
 def cityfinder(cityname):
     """Finds the city the user is looking for."""
-    """
     try:
         api1 = finder('apikey.json','API_Key' )
         apikey = api1.load()
-        url = f"http://api.weatherstack.com/current?access_key={apikey}&query={urllib.parse.quote_plus(cityname)}&units=m"
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={urllib.parse.quote_plus(cityname)}&appid={apikey}&units=metric"
         response = requests.get(url)
         response.raise_for_status()
     except requests.RequestException:
         return None
-    """
     try:
-        #data = response.json()
+        data = response.json()
         return {
-            "temp": 7, #data['current']['temperature'],
-            "feeltemp": -4, #data['current']['feelslike'],
-            "wind": 30, #data['current']['wind_speed'],
-            "icons": "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0027_light_snow_showers_night.png", #data['current']['weather_icons'],
-            "description": 'Cloudy' #data['current']['weather_descriptions'][0]
+            "temp": round(data['main']['temp']),
+            "feeltemp": round(data['main']['feels_like']),
+            "wind": round(data['wind']['speed']),
+            #"icons": "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0027_light_snow_showers_night.png", #data['current']['weather_icons'],
+            "description": data['weather'][0]['description']
         }
     except (KeyError, TypeError, ValueError):
         return None

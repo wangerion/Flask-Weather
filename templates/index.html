@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
 
-{% block wet %}
-
-    <form action="/" method="post">
-        <input autocomplete="off" class="form-control-lg" type="text" placeholder="Type a City name" aria-label="Search" name="city">
-    </form>
+{% block body %}
+<div class="container-lg">
+    <div class="d-flex justify-content-center">
+        <form action="/" method="post">
+            <input autocomplete="off" class="form-control-lg" type="text" placeholder="Type a City name" aria-label="Search" name="city">
+        </form>
+    </div>
+</div>
 
 {% endblock %}
