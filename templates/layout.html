@@ -9,16 +9,16 @@
         <title>Test Weather</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
+        <nav class="navbar navbar-custom">
+            <div class="container d-flex justify-content-center">
                 <a class="navbar-brand" href="/">WeatherTest</a>
-                {% if city %}
-                <form action="/" class="d-flex" method="post">
-                    <input autocomplete="off" class="form-control me-2" type="text" placeholder="Type a City name" aria-label="Search" name="city">
-                </form>
-                {% endif %}
             </div>
         </nav>
+        <div class="containter searchheader d-flex justify-content-center">
+            <form action="/" method="post">
+                <input autocomplete="off" class="form-control searchbox" type="search" aria-label="Search" name="city">
+            </form>
+        </div>
                 {% block body %}{% endblock %}
     </body>
 </html>

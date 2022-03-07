@@ -1,3 +1,10 @@
+.navbar-custom {
+    background-color: #333333;
+}
+.navbar-custom .navbar-brand {
+    color: white;
+}
+
 .temptext {
     font-weight: bold;
     font-size: 100px;
@@ -24,6 +31,36 @@
     border-top-right-radius: 2.75px;
 }
 
-body{
-    background-image: url(/static/[GIF]\ Weather.gif);
+.searchheader {
+    background-color: #eeeeee;
+    height: 2.8125rem;
+}
+
+.searchbox {
+    height: 1.875rem;
+    border-radius: 1.56rem;
+    margin: 0.37rem;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.searchbuttons {
+    background-color: grey;
+    border-radius: .14rem;
+    width: 2.18rem;
+    height: 2.18rem;
+    margin-top: 0.37rem;
+    padding: auto;
+}
+
+@media screen and (min-width: 992px) {
+    .searchbox {
+        width: 700px;
+    }
+}
+
+.finfo {
+    background-color: #f7f7f7;
+    padding-top: 0.37rem;
+    padding-bottom: 00.37rem;
 }

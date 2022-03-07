@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="container-lg">
-    <div class="d-flex justify-content-center">
-        <form action="/" method="post">
-            <input autocomplete="off" class="form-control-lg" type="text" placeholder="Type a City name" aria-label="Search" name="city">
-        </form>
+    {% if city %}
+    <div class="containter-fluid d-flex justify-content-center finfo">
+        <div class="row mx-3">
+            <div class="col"><i class="bi bi-thermometer"></i>Wind: {{city.feeltemp}}</div>
+            <div class="col"><i class="bi bi-thermometer"></i>Humidity: {{city.feeltemp}}</div>
+            <div class="col"><i class="bi bi-thermometer"></i>Dew Pt: {{city.feeltemp}}</div>
+            <div class="col"><i class="bi bi-thermometer"></i>UV Index: {{city.feeltemp}}</div>
+            <div class="col"><i class="bi bi-wind"></i>Wind speed {{city.wind}}</div>
+            <div class="col">Feels like {{city.feeltemp}}</div>
+        </div>
     </div>
-</div>
-
+    {% endif %}
 {% endblock %}
