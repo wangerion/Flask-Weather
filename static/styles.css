@@ -1,5 +1,6 @@
 .navbar-custom {
     background-color: #333333;
+    height: 45px;
 }
 .navbar-custom .navbar-brand {
     color: white;
@@ -38,6 +39,7 @@
 
 .searchbox {
     height: 1.875rem;
+    width: 22.813rem;
     border-radius: 1.56rem;
     margin: 0.37rem;
     text-align: center;
@@ -55,12 +57,19 @@
 
 @media screen and (min-width: 992px) {
     .searchbox {
-        width: 700px;
+        width: 43.75rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .searchbox {
+        width: 15.625rem;
     }
 }
 
 .finfo {
+    font-size: small;
+    height: 2.813rem;
     background-color: #f7f7f7;
     padding-top: 0.37rem;
-    padding-bottom: 00.37rem;
+    padding-bottom: 0.37rem;
 }
