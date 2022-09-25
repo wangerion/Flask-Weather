@@ -44,6 +44,9 @@
     margin: 0.37rem;
     text-align: center;
     background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
 }
 
 .searchbuttons {
@@ -67,9 +70,59 @@
 }
 
 .finfo {
-    font-size: small;
-    height: 2.813rem;
+    font-size: 0.875rem;
+    font-family: 'Lato', sans-serif;
+    height: 40px;
     background-color: #f7f7f7;
-    padding-top: 0.37rem;
-    padding-bottom: 0.37rem;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    
+}
+
+.ainfo {
+    width: 200px;
+    border-color: #333333;
+    border-style: solid;
+    height: 80px;
+}
+.binfo {
+    width: 200px;
+    height: 40px;
+    border-color: #333333;
+    border-style: solid;
+
+}
+.weather-info-button {
+    background-color: #d0d0d0;
+    color: #111111;
+    border: none;
+    cursor: pointer;
+}
+
+.weather-info-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.weather-info-dropdown-content {
+    display: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    color: #989898;
+    background-color: #f8f8f8; 
+    min-width: 85px;
+    z-index: 1;
+}
+
+.weather-info-dropdown-content li {
+    display: block;
+    list-style: none;
+}
+.weather-info-dropdown-content li:hover {background-color: #efefef;}
+
+.show-weather-dropdown .weather-info-dropdown-content {
+    display: block;
+}
+#content{
+    color: black;
 }

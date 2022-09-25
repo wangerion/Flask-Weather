@@ -1,16 +1,35 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<div class="containter searchheader d-flex justify-content-center">
+    <form action="/" method="post">
+        <input autocomplete="off" class="searchbox form-control" type="text" aria-label="Search" name="city">
+        <div class="weather-info-dropdown">
+            <select class="form-select" aria-label="Select the desired temperature." name="tempvalues">
+                {% for i in units %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+</div>
 {% if city %}
 <div class="containter-fluid d-flex justify-content-center finfo">
     <div class="row row-cols-auto mx-0">
-        <div class="col">Wind: {{city.feeltemp}}</div>
-        <div class="col">Humidity: {{city.feeltemp}}</div>
-        <div class="col">Dew Pt: {{city.feeltemp}}</div>
-        <div class="col">UV Index: {{city.feeltemp}}</div>
-        <div class="col">Wind speed {{city.wind}}</div>
-        <div class="col">Feels like {{city.feeltemp}}</div>
+        <div class="col">Wind: {{city.wind}}</div>
+        <div class="col">Humidity: {{city.humidity}}%</div>
+        <div class="col">Dew Pt: {{city.dewpoint}}</div>
+        <div class="col">UV Index: {{city.uvi}}</div>
+        <div class="col">Visibility {{city.vis}}</div>
+        <div class="col">Pressure {{city.pressure}}</div>
     </div>
+</div>
+<div class="containter-fluid d-flex justify-content-center">
+    <img src="https://openweathermap.org/img/wn/{{city.icons}}@2x.png">
+    <span class="ainfo">
+    <span class="binfo">Tessdasffffffffasfqwfqwfwqft Test</span>
+    <span class="binfo">2Tesadasdadaaaaaaaaaaaaasdasdasdasdst</span>
+    </span>
 </div>
 {% endif %}
 {% endblock %}
