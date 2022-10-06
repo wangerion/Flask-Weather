@@ -1,11 +1,128 @@
-.temptext {
-    font-weight: bold;
-    font-size: 50px;
-
+.navbar-custom {
+    background-color: #333333;
+    height: 45px;
+}
+.navbar-custom .navbar-brand {
+    color: white;
 }
 
-.feeltext {
-    font-size: 12px;
-    font-weight:100;
-    color: wheat;
+.temptext {
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.weathercardbody {
+    max-width: 600px;
+    min-height: 200px;
+    border: 1px solid black;
+    background-image: url("/static/forest-g158be54cd_640.jpg");
+    color: white;
+}
+
+.additionalcard {
+    max-width: 400px;
+    min-height: 100px;
+    border: 1px solid black;
+}
+
+.weathercardheader {
+    background-color: rgba(154, 154, 177, 0.5);
+    color: white;
+    border-top-left-radius: 2.75px;
+    border-top-right-radius: 2.75px;
+}
+
+.searchheader {
+    background-color: #eeeeee;
+    height: 2.8125rem;
+}
+
+.searchbox {
+    height: 1.875rem;
+    width: 22.813rem;
+    border-radius: 1.56rem;
+    margin: 0.37rem;
+    text-align: center;
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.searchbuttons {
+    background-color: grey;
+    border-radius: .14rem;
+    width: 2.18rem;
+    height: 2.18rem;
+    margin-top: 0.37rem;
+    padding: auto;
+}
+
+@media screen and (min-width: 992px) {
+    .searchbox {
+        width: 43.75rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .searchbox {
+        width: 15.625rem;
+    }
+}
+
+.finfo {
+    font-size: 0.875rem;
+    font-family: 'Lato', sans-serif;
+    height: 40px;
+    background-color: #f7f7f7;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    
+}
+
+.ainfo {
+    width: 200px;
+    border-color: #333333;
+    border-style: solid;
+    height: 80px;
+}
+.binfo {
+    width: 200px;
+    height: 40px;
+    border-color: #333333;
+    border-style: solid;
+
+}
+.weather-info-button {
+    background-color: #d0d0d0;
+    color: #111111;
+    border: none;
+    cursor: pointer;
+}
+
+.weather-info-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.weather-info-dropdown-content {
+    display: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    color: #989898;
+    background-color: #f8f8f8; 
+    min-width: 85px;
+    z-index: 1;
+}
+
+.weather-info-dropdown-content li {
+    display: block;
+    list-style: none;
+}
+.weather-info-dropdown-content li:hover {background-color: #efefef;}
+
+.show-weather-dropdown .weather-info-dropdown-content {
+    display: block;
+}
+#content{
+    color: black;
 }

@@ -1,1 +1,12 @@
-/__pycache__/
+.venv
+__pycache__
+apikey.json
+apikey.txt
+beaut.json
+static/bootstrapicons
+static/Untitled_Artwork.png
+static/[GIF] Weather.gif
+static/forest-g158be54cd_640.jpg
+static/weather-icons.min.css
+weathermap.json
+plan.txt

@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
 
-{% block wet %}
-
+{% block body %}
+<div class="containter searchheader d-flex justify-content-center">
     <form action="/" method="post">
-        <input autocomplete="off" class="form-control-lg" type="text" placeholder="Type a City name" aria-label="Search" name="city">
+        <input autocomplete="off" class="searchbox form-control" type="text" aria-label="Search" name="city">
+        <div class="weather-info-dropdown">
+            <select class="form-select" aria-label="Select the desired temperature." name="tempvalues">
+                {% for i in units %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+        </div>
     </form>
-
+</div>
 {% endblock %}
