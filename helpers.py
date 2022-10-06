@@ -18,7 +18,7 @@ class finder:
         return key
 
 
-def cityfinder(cityname):
+def cityfinder(cityname,temp):
     """Finds the city the user is looking for."""
     try:
         api1 = finder('apikey.json','API_Key' )
@@ -31,7 +31,7 @@ def cityfinder(cityname):
             lat = coord[0]['lat']
             lon = coord[0]['lon']
             #url = f"http://api.openweathermap.org/data/2.5/weather?q={urllib.parse.quote_plus(cityname)}&appid={apikey}&units=metric"
-            url = f"https://api.openweathermap.org/data/2.5/onecall?lat={urllib.parse.quote_plus(lat)}&lon={urllib.parse.quote_plus(lon)}&appid={apikey}&units=metric"
+            url = f"https://api.openweathermap.org/data/2.5/onecall?lat={urllib.parse.quote_plus(lat)}&lon={urllib.parse.quote_plus(lon)}&exclude=minutely,hourly&appid={apikey}&lang=ro&units={temp}"
             response = requests.get(url)
             response.raise_for_status()
         else:
@@ -39,22 +39,28 @@ def cityfinder(cityname):
     except requests.RequestException:
         return None
     try:
-        data = response.json()
+        data_weather= response.json()
+        data_location = coord
 
         with open("weathermap.json", "w") as write_file:
-            json.dump(data, write_file, indent=4)
+            json.dump(data_weather, write_file, indent=4)
+        with open("beaut.json", "w") as write_file:
+            json.dump(data_location, write_file, indent=4)
 
         return {
-            "temp": round(data['current']['temp']),
-            "feeltemp": round(data['current']['feels_like']),
-            "wind": round(data['current']['wind_speed']),
-            "icons": data['current']['weather'][0]['icon'],
-            "description": data['current']['weather'][0]['description'],
-            "humidity": data['current']['humidity'],
-            "dewpoint": round(data['current']['dew_point']),
-            "uvi": data['current']['uvi'],
-            "pressure": data['current']['pressure'],
-            "vis": data['current']['visibility']
+            "temp": round(data_weather['current']['temp']),
+            "feeltemp": round(data_weather['current']['feels_like']),
+            "wind": round(data_weather['current']['wind_speed']),
+            "icons": data_weather['current']['weather'][0]['icon'],
+            "description": data_weather['current']['weather'][0]['description'],
+            "humidity": data_weather['current']['humidity'],
+            "dewpoint": round(data_weather['current']['dew_point']),
+            "uvi": data_weather['current']['uvi'],
+            "pressure": data_weather['current']['pressure'],
+            "vis": data_weather['current']['visibility'],
+            "city": data_location[0]['address']['city'],
+            "county": data_location[0]['address']['county'],
+            "country": data_location[0]['address']['country']
         }
     except (KeyError, TypeError, ValueError):
         return None
